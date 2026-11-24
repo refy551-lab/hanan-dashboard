@@ -707,7 +707,7 @@ void new Date().toLocaleDateString(LOC,{weekday:'long',day:'numeric',month:'long
       if(a.empty&&!b.empty){$('#gate').innerHTML='<div><h2>نجهّز المساحة المشتركة…</h2><p>ننقل بياناتك مرة وحدة بس، لا تقفلين الصفحة.</p></div>';for(const d of b.docs)await ws.collection(k).doc(d.id).set(d.data())}}
   }catch(e){}}}
   const onErr=()=>{clearTimeout(timer);const b=$('#banner');b.textContent='انقطع الاتصال بالبيانات. أعيدي فتح الصفحة.';b.hidden=false};
-  const show=()=>{if(S.ready)return;S.ready=true;playWelcome();$('#gate').hidden=true;$('#view').hidden=false;$('#nav').hidden=false;$('#searchBtn').hidden=false;$('#ctaAdd').hidden=false;$('#foot').hidden=false;renderFoot();go(location.hash.slice(1)||'home',true)};
+  const show=()=>{if(S.ready)return;S.ready=true;$('#gate').hidden=true;$('#view').hidden=false;$('#nav').hidden=false;$('#searchBtn').hidden=false;$('#ctaAdd').hidden=false;$('#foot').hidden=false;renderFoot();go(location.hash.slice(1)||'home',true)};
   let tick=null;const schedule=()=>{if(tick)return;tick=requestAnimationFrame(()=>{tick=null;if(S.ready){renderSide();if(!STATIC.has(S.view))render()}})};
   for(const k of Object.keys(MODS)){
     refs[k]=ws.collection(k);
@@ -722,12 +722,13 @@ void new Date().toLocaleDateString(LOC,{weekday:'long',day:'numeric',month:'long
 
 /* ============ welcome sound ============ */
 const muted=()=>{try{return localStorage.getItem('hanan-mute')==='1'}catch(e){return false}};
-function playWelcome(){if(muted())return;const a=new Audio('welcome.m4a');a.preload='auto';let done=false;
-  const evs=['pointerup','touchend','click','keydown'],off=()=>evs.forEach(n=>document.removeEventListener(n,go,true));
+function playWelcome(){if(muted())return;const a=new Audio('welcome.m4a?v=2');a.preload='auto';a.setAttribute('playsinline','');let done=false;
+  const evs=['touchend','pointerup','mouseup','click','keydown'],off=()=>evs.forEach(n=>document.removeEventListener(n,go,true));
   const go=()=>{if(done)return;done=true;off();a.currentTime=0;a.play().catch(()=>{})};
   evs.forEach(n=>document.addEventListener(n,go,true));
   a.play().then(()=>{done=true;off()}).catch(()=>{});
 }
+playWelcome();
 document.addEventListener('click',e=>{const b=e.target.closest('#muteW');if(!b)return;const m=!muted();try{localStorage.setItem('hanan-mute',m?'1':'0')}catch(err){}b.textContent=m?'تشغيل صوت الترحيب':'إيقاف صوت الترحيب';toast(m?'وقّفنا صوت الترحيب':'صوت الترحيب يشتغل مع كل فتح')});
 
 /* ============ navigation ============ */
