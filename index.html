@@ -723,7 +723,7 @@ void new Date().toLocaleDateString(LOC,{weekday:'long',day:'numeric',month:'long
 /* ============ welcome sound ============ */
 const muted=()=>{try{return localStorage.getItem('hanan-mute')==='1'}catch(e){return false}};
 let welOff=null;
-function playWelcome(){if(muted())return;if(welOff)welOff();const a=new Audio('welcome.m4a?v=3');a.preload='auto';a.setAttribute('playsinline','');let done=false;
+function playWelcome(){if(muted())return;if(welOff)welOff();const a=new Audio('welcome.m4a?v=4');a.preload='auto';a.setAttribute('playsinline','');let done=false;
   const evs=['touchend','pointerup','mouseup','click','keydown'],off=()=>{evs.forEach(n=>document.removeEventListener(n,go,true));welOff=null};welOff=off;
   const go=()=>{if(done)return;done=true;off();a.currentTime=0;a.play().catch(()=>{})};
   evs.forEach(n=>document.addEventListener(n,go,true));
