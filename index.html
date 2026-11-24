@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>إدارة أعمال حنان المالكي</title>
+<title>حنان المالكي</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -237,8 +237,8 @@ body.dreamy main{padding-bottom:0}body.dreamy footer.foot{margin-top:0}
 .tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:1.1rem;padding:1rem 1.1rem}
 .tile b{display:block;font-weight:900;font-size:1.55rem;line-height:1.3;letter-spacing:-.02em}
 .tile span{color:var(--muted);font-size:.86rem;font-weight:600}
-.tile.hero{background:var(--glass);border-color:rgba(255,255,255,.22)}
-.tile.hero b{color:var(--accent)}
+.tile.hl{background:var(--glass);border-color:rgba(255,255,255,.22)}
+.tile.hl b{color:var(--accent)}
 .tile.bad b{color:var(--bad)}
 .seg{display:flex;gap:.45rem;overflow-x:auto;margin-bottom:1.1rem;padding-bottom:.25rem;scrollbar-width:thin}
 .seg button{border:1.5px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:.38rem 1rem;white-space:nowrap;font-size:.9rem;font-weight:700}
@@ -362,6 +362,47 @@ footer.foot button:hover{color:var(--accent-2)}
 footer.foot p{color:var(--muted);margin-top:1rem;max-width:24rem}
 @media (max-width:1000px){footer.foot .in{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){footer.foot .in{grid-template-columns:1fr 1fr}footer.foot .in>div:first-child{grid-column:1/-1}}
+/* ===== life goals ===== */
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.8rem}
+@media (max-width:600px){.areas{grid-template-columns:1fr 1fr;gap:.6rem}.area{padding:.75rem .8rem}.area b{font-size:.88rem}.ring{width:2.2rem;height:2.2rem}.ring i{width:1.7rem;height:1.7rem;font-size:.62rem}}
+.area{border:1px solid var(--line);background:var(--surface);border-radius:1rem;padding:.9rem 1rem;text-align:start;color:var(--ink);display:flex;flex-direction:column;gap:.35rem;position:relative;overflow:hidden}
+.area::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--ac)}
+[dir=rtl] .area::before{inset:0 0 0 auto}
+.area[aria-pressed="true"]{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 14%,transparent)}
+.area b{font-size:.98rem}.area span{font-size:.82rem;color:var(--faint)}
+.ring{--p:0;width:2.6rem;height:2.6rem;border-radius:50%;background:conic-gradient(var(--ac) calc(var(--p)*1%),rgba(255,255,255,.12) 0);display:grid;place-items:center;flex:none}
+.ring i{width:2rem;height:2rem;border-radius:50%;background:var(--night-2);display:grid;place-items:center;font-style:normal;font-size:.7rem;font-weight:800}
+.area .rw{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1rem;margin-top:1.2rem}
+.gcard{border:1px solid var(--line);background:var(--surface);border-radius:1.1rem;padding:1.1rem 1.15rem;display:flex;flex-direction:column;gap:.65rem;border-top:4px solid var(--ac)}
+.gcard.done{opacity:.75}
+.gcard .tp{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.gcard .ap{font-size:.78rem;font-weight:800;padding:.15rem .6rem;border-radius:999px;background:color-mix(in srgb,var(--ac) 22%,transparent);color:#fff}
+.gcard h4{font-size:1.15rem;font-weight:800;line-height:1.45}
+.gcard .why{color:var(--muted);font-size:.88rem;line-height:1.6}
+.gcard .dl{font-size:.82rem;color:var(--faint)}.gcard .dl.late{color:var(--bad)}
+.gcard .acts{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:auto}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem}
+.dbtn{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:.65rem;padding:.35rem 0;display:flex;flex-direction:column;align-items:center;gap:.1rem;font-size:.72rem;font-weight:700}
+.dbtn b{width:1.5rem;height:1.5rem;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:.8rem}
+.dbtn.on b{background:var(--ac,var(--good));border-color:var(--ac,var(--good));color:var(--accent-ink)}
+.dbtn.today{border-color:var(--accent-2);color:#fff}
+.gstat{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;font-size:.85rem;color:var(--muted)}
+.gstat b{color:#fff;font-size:1.05rem}
+.gnum{font-weight:900;font-size:1.7rem;line-height:1.1}.gnum small{font-size:.9rem;color:var(--faint);font-weight:700}
+.gbar{height:.55rem;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}.gbar i{display:block;height:100%;background:var(--ac);border-radius:inherit}
+.steps{display:flex;flex-direction:column;gap:.35rem}
+.step{display:flex;align-items:center;gap:.6rem;border:0;background:none;color:var(--ink);text-align:start;padding:.25rem 0;font-size:.92rem}
+.step b{width:1.25rem;height:1.25rem;border-radius:.35rem;border:2px solid var(--line);flex:none;display:grid;place-items:center;font-size:.75rem}
+.step.on{color:var(--faint);text-decoration:line-through}.step.on b{background:var(--ac);border-color:var(--ac);color:var(--accent-ink)}
+.habs{display:flex;flex-direction:column;gap:.55rem}
+.hab{display:flex;align-items:center;gap:.8rem;border:1px solid var(--line);background:var(--surface);border-radius:.9rem;padding:.7rem .9rem;color:var(--ink);text-align:start;width:100%}
+.hab .ck{width:2rem;height:2rem;border-radius:50%;border:2px solid var(--ac);flex:none;display:grid;place-items:center;font-weight:900;color:var(--accent-ink)}
+.hab.on .ck{background:var(--ac)}.hab.on .tt{text-decoration:line-through;color:var(--faint)}
+.hab .tt{font-weight:700;flex:1}.hab .sub{font-size:.8rem;color:var(--faint)}
+.revnote{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border:1px dashed var(--accent-2);border-radius:1rem;padding:.9rem 1.1rem;margin-top:1.2rem;background:rgba(255,179,107,.06)}
+.secbreak{margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+[data-show][hidden]{display:none!important}
 /* login (standalone) */
 .login{max-width:24rem;margin-inline:auto;display:flex;flex-direction:column;align-items:center;gap:.9rem}
 .login .mark.big{width:4.2rem;height:4.2rem;border-radius:1.1rem;background:linear-gradient(135deg,var(--accent-2),var(--accent));color:var(--accent-ink);display:grid;place-items:center;font-weight:900;font-size:2.2rem}
@@ -388,14 +429,12 @@ footer.foot p{color:var(--muted);margin-top:1rem;max-width:24rem}
   <span class="vsep"></span>
   <nav class="main" id="mainnav" aria-label="التنقل الرئيسي">
     <button data-go="home">الرئيسية</button>
-    <div class="dd"><button class="ddbtn" id="ddbtn" aria-expanded="false" aria-controls="mega">الأدوات <svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="mega" id="mega" hidden></div></div>
+    <button data-go="life">الأهداف</button>
+    <button data-go="checkins">المراجعات</button>
     <button data-go="vision">لوحة الأحلام</button>
     <button data-go="calendar">التقويم</button>
-    <button data-go="content">المحتوى</button>
     <button data-go="tasks">المهام</button>
-    <button data-go="deals">التعاونات</button>
-    <button data-go="finance">المالية</button>
-    <button data-go="reports">التقارير</button>
+    <div class="dd"><button class="ddbtn" id="ddbtn" aria-expanded="false" aria-controls="mega">الأعمال والسوشيال <svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="mega" id="mega" hidden></div></div>
   </nav>
   <button class="search" id="searchBtn" hidden><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>بحث</button>
   <button class="cta" id="ctaAdd" hidden>+ إضافة</button>
@@ -409,8 +448,8 @@ footer.foot p{color:var(--muted);margin-top:1rem;max-width:24rem}
 <button class="fab" id="fab" hidden></button>
 <nav class="bottom" id="nav" hidden><div class="in">
   <button data-go="home">الرئيسية</button>
+  <button data-go="life">الأهداف</button>
   <button data-go="calendar">التقويم</button>
-  <button data-go="content">المحتوى</button>
   <button data-go="tasks">المهام</button>
   <button data-go="more">المزيد</button>
 </div></nav>
@@ -483,7 +522,39 @@ const moveActs=(map,st)=>(map[st]||[]).map(([to,l])=>['move',l,to]);
 
 /* ============ modules ============ */
 const VCATS_OPTS=[['business','الأعمال والمشاريع'],['money','المال والاستثمار'],['brand','العلامة والمحتوى'],['growth','النمو الشخصي'],['travel','السفر والتجارب'],['family','العائلة والعلاقات'],['health','الصحة والراحة']];
+const LIFE_AREAS=[['health','الصحة واللياقة','#6FE0D8'],['self','الذات والعادات','#C9A6FF'],['money','المال والادخار','#FFE36B'],['learn','التعلّم والمهنة','#8FB8FF'],['family','العائلة والعلاقات','#FFB0D6'],['business','الأعمال والسوشيال','#FFB36B']];
+const LA=k=>LIFE_AREAS.find(a=>a[0]===k)||LIFE_AREAS[1];
+const GKIND=[['habit','عادة متكررة'],['number','رقم أوصل له'],['steps','خطوات ومراحل']];
+const GST=[['active','نشط'],['paused','متوقف مؤقتًا'],['done','تحقق']];
+const FREQ=[['daily','كل يوم'],['weekly','عدد مرات في الأسبوع']];
+const MOOD=[['',''],['1','١ · صعب'],['2','٢'],['3','٣ · عادي'],['4','٤'],['5','٥ · ممتاز']];
+const weekStart=d=>{const x=new Date(d+'T00:00');return addDays(d,-x.getDay())};
+const habTarget=x=>x.freq==='weekly'?Math.max(1,+x.perWeek||1):7;
+const habWeek=x=>{const ws=weekStart(today());return (x.checks||[]).filter(d=>d>=ws&&d<=today()).length};
+const habStreak=x=>{const s=new Set(x.checks||[]);let d=s.has(today())?today():addDays(today(),-1),n=0;while(s.has(d)){n++;d=addDays(d,-1)}return n};
+const stepList=x=>String(x.steps||'').split('\n').map(s=>s.trim()).filter(Boolean);
+const lifeProg=x=>{if(x.status==='done')return 1;
+  if(x.kind==='habit')return Math.min(1,habWeek(x)/habTarget(x));
+  if(x.kind==='number'){const s=num(x.startVal)||0,tg=num(x.target),c=num(x.current);if(tg==null||c==null||tg===s)return null;return Math.max(0,Math.min(1,(c-s)/(tg-s)))}
+  const st=stepList(x);if(!st.length)return null;const d=new Set(x.doneSteps||[]);return st.filter(s=>d.has(s)).length/st.length};
+const activeLife=()=>S.data.life.filter(x=>x.status!=='done'&&x.status!=='paused');
+const SH=(k,v)=>({show:[k,v]});
 const MODS={
+ life:{title:'أهداف حنان',one:'هدف',prefix:'G',page:()=>rLife(),desc:'كل أهداف حنان في الحياة: الصحة، الذات، المال، التعلّم، العائلة، والأعمال.',
+  fields:[['title','الهدف','text',{req:1,full:1}],['area','المجال','select',{o:LIFE_AREAS.map(a=>[a[0],a[1]]),def:'health'}],['kind','طريقة المتابعة','select',{o:GKIND,def:'habit'}],['status','الحالة','select',{o:GST,def:'active'}],['start','تاريخ البداية','date',{def:'_today'}],['deadline','الموعد المستهدف','date'],['why','ليش هذا الهدف مهم لحنان؟','textarea',{full:1}],
+   ['_h','العادة','sec',SH('kind','habit')],['freq','التكرار','select',{o:FREQ,def:'daily',...SH('kind','habit')}],['perWeek','كم مرة في الأسبوع؟ (للتكرار الأسبوعي)','number',{def:3,...SH('kind','habit')}],
+   ['_n','الرقم','sec',SH('kind','number')],['unit','الوحدة (ريال، كتاب، كيلو…)','text',SH('kind','number')],['startVal','نقطة البداية','number',SH('kind','number')],['target','المستهدف','number',SH('kind','number')],['current','الرقم الحالي','number',SH('kind','number')],
+   ['_s','المراحل','sec',SH('kind','steps')],['steps','الخطوات (كل خطوة في سطر)','textarea',{full:1,...SH('kind','steps')}]],
+  card:x=>({t:x.title,pills:[[LA(x.area)[1]],[lbl(GKIND,x.kind)]],date:x.deadline?dateP(x.deadline,x.status!=='done'&&isLate(x.deadline)):null}),
+  ev:x=>x.deadline&&x.status!=='done'?[{date:x.deadline,label:'موعد هدف: '+x.title,c:LA(x.area)[2],type:LA(x.area)[1]}]:[]},
+ checkins:{title:'المراجعات الدورية',one:'مراجعة',prefix:'RV',desc:'وقفة كل أسبوع أو شهر: وش تحقق، وش كان صعب، ووش التركيز الجاي. المراجعة المنتظمة هي اللي تخلي الأهداف حيّة.',
+  fields:[['period','نوع المراجعة','select',{o:[['week','أسبوعية'],['month','شهرية']],def:'week'}],['date','التاريخ','date',{def:'_today'}],['mood','كيف كانت الفترة؟','select',{o:MOOD}],
+   ['wins','وش تحقق؟ (الإنجازات)','textarea',{full:1}],['hard','وش كان صعب أو ما مشى؟','textarea',{full:1}],['learned','وش تعلمنا؟','textarea',{full:1}],['focus','التركيز للفترة الجاية','textarea',{full:1}]],
+  sort:(a,b)=>(a.date||'')>(b.date||'')?-1:1,
+  filters:[['week','الأسبوعية',x=>x.period==='week'],['month','الشهرية',x=>x.period==='month']],
+  card:x=>({t:(x.period==='month'?'مراجعة شهرية':'مراجعة أسبوعية'),status:x.mood?[lbl(MOOD,x.mood),+x.mood>=4?'good':+x.mood<=2?'bad':'']:null,date:x.date?dateP(x.date,false):null,
+    meta:[x.wins?`<b>تحقق:</b> ${esc(x.wins)}`:'',x.hard?`<b>صعب:</b> ${esc(x.hard)}`:'',x.focus?`<b>التركيز الجاي:</b> ${esc(x.focus)}`:'']})},
+
  tasks:{title:'المهام والاجتماعات',one:'مهمة',prefix:'TASK',desc:'كل العمل غير المرتبط بمادة واحدة: تنسيق، حجوزات، فعاليات، سفر، موردون، قرارات واجتماعات.',
   fields:[['title','المهمة أو القرار','text',{req:1,full:1}],['area','المجال','select',{o:opt(AREAS)}],['owner','المسؤولة','text'],['priority','الأولوية','select',{o:PRI,def:'medium'}],['due','تاريخ الاستحقاق','date'],['status','الحالة','select',{o:TASK_ST,def:'todo'}],['party','الجهة أو الاجتماع','text'],['dependsOn','تعتمد على','text'],['output','المخرج أو رابطه','text'],['next','الخطوة التالية','textarea',{full:1}]],
   board:TASK_ST.slice(0,4),
@@ -531,7 +602,7 @@ const MODS={
   board:DEAL_ST.slice(0,4),
   sort:(a,b)=>(a.date||'9')<(b.date||'9')?-1:1,
   filters:[['snap','سناب',x=>x.platform==='snap'||x.platform==='both'],['tiktok','تيك توك',x=>x.platform==='tiktok'||x.platform==='both'],['undelivered','لم يُسلّم',x=>x.status==='confirmed'&&x.delivery!=='delivered'],['cancelled','الملغية',x=>x.status==='cancelled',1]],
-  summary:a=>`<div class="tiles"><div class="tile hero"><b>${money(sum(a.filter(x=>x.status==='nego'||x.status==='confirmed'),x=>x.amount))}</b><span>قيمة الصفقات المفتوحة</span></div>
+  summary:a=>`<div class="tiles"><div class="tile hl"><b>${money(sum(a.filter(x=>x.status==='nego'||x.status==='confirmed'),x=>x.amount))}</b><span>قيمة الصفقات المفتوحة</span></div>
    <div class="tile"><b>${nf(a.filter(x=>x.status==='confirmed').length)}</b><span>تعاون مؤكد</span></div>
    <div class="tile"><b>${nf(a.filter(x=>x.status==='done').length)}</b><span>منفّذ بانتظار الدفع</span></div>
    <div class="tile"><b>${money(sum(a.filter(x=>x.status==='paid'),x=>x.amount))}</b><span>إجمالي المدفوع</span></div></div>`,
@@ -545,7 +616,7 @@ const MODS={
   sort:(a,b)=>(a.due||'9')<(b.due||'9')?-1:1,
   filters:[['income','الإيرادات',x=>x.type!=='expense'],['expense','المصروفات',x=>x.type==='expense'],['open','غير مسددة',x=>finBal(x)>0],['overdue','المتأخرة',x=>finState(x)==='overdue']],
   summary:a=>{const m=today().slice(0,7),inc=a.filter(x=>x.type!=='expense'),exp=a.filter(x=>x.type==='expense');
-   return `<div class="tiles"><div class="tile hero"><b>${money(sum(inc,x=>monthPaid(x,m)))}</b><span>محصّل هذا الشهر</span></div>
+   return `<div class="tiles"><div class="tile hl"><b>${money(sum(inc,x=>monthPaid(x,m)))}</b><span>محصّل هذا الشهر</span></div>
    <div class="tile"><b>${money(sum(inc.filter(x=>finBal(x)>0),finBal))}</b><span>مستحقات غير محصّلة</span></div>
    <div class="tile ${inc.some(x=>finState(x)==='overdue')?'bad':''}"><b>${money(sum(inc.filter(x=>finState(x)==='overdue'),finBal))}</b><span>متأخرة عن موعدها</span></div>
    <div class="tile"><b>${money(sum(exp,x=>monthPaid(x,m)))}</b><span>مصروفات هذا الشهر</span></div></div>`},
@@ -570,7 +641,7 @@ const MODS={
     meta:[kv('التواصل',[x.person,x.channel].filter(Boolean).join(' · ')),kv('الفرصة',x.opportunity),kv('الخطوة القادمة',x.nextStep),x.lastContact?kv('آخر تواصل',dateTxt(x.lastContact)):''],acts:[['contacted','تواصلت اليوم']],alert:due}},
   ev:x=>x.followUp&&!['agreed','no'].includes(x.status)?[{date:x.followUp,label:'متابعة: '+x.name,c:'var(--muted)',type:'متابعة'}]:[]},
 
- goals:{title:'أهداف الشهر',one:'هدف',desc:'أهداف SMART: هدف محدد، مؤشر ومصدر، قيمة واقعية وموعد. الأهداف الرقمية تُملأ بعد تحديد خط الأساس.',
+ goals:{title:'أهداف المنصات',one:'هدف',desc:'أهداف SMART: هدف محدد، مؤشر ومصدر، قيمة واقعية وموعد. الأهداف الرقمية تُملأ بعد تحديد خط الأساس.',
   fields:[['title','الهدف المحدد','text',{req:1,full:1}],['platform','المنصة','select',{o:PLAT}],['metric','المؤشر والوحدة','text'],['baseline','خط الأساس','number'],['target','المستهدف','number'],['actual','الفعلي','number'],['start','بداية القياس','date'],['deadline','الموعد النهائي','date'],['source','المصدر وآلية القياس','text',{full:1}],['why','سبب واقعية الهدف','text'],['link','الارتباط بالأولوية','text']],
   sort:(a,b)=>(a.deadline||'9')<(b.deadline||'9')?-1:1,
   card:x=>{const p=goalProg(x);return {t:x.title,pills:[platPill(x.platform),x.link?[x.link]:null],date:x.deadline?{d:x.deadline,late:isLate(x.deadline,p==null||p<1),pre:'حتى '}:null,
@@ -610,7 +681,8 @@ const MODS={
   fields:[['kind','النوع','select',{o:[['dream','حلم'],['quote','عبارة تحفيزية']],def:'dream'}],['title','الحلم أو العبارة','text',{req:1,full:1}],['category','التصنيف','select',{o:VCATS_OPTS,def:'business'}],['year','متى؟ (سنة أو موعد)','text'],['status','الحالة','select',{o:[['dream','حلم'],['progress','قيد التحقيق'],['done','تحقق']],def:'dream'}],['note','ليش هالحلم مهم؟','textarea',{full:1}],['image','صورة الحلم','image']],
   card:x=>({t:x.title})}
 };
-const GROUPS=[['المحتوى',['content','ideas','experiments','reviews']],['الأعمال والمال',['deals','finance','contracts','contacts']],['التشغيل',['tasks','goals','stages','governance']],['الحساب والحماية',['diagnosis','risks','assets','metrics']]];
+const LIFE_GROUP=['حياة حنان',['life','checkins']];
+const GROUPS=[LIFE_GROUP,['المحتوى',['content','ideas','experiments','reviews']],['الأعمال والمال',['deals','finance','contracts','contacts']],['التشغيل',['tasks','goals','stages','governance']],['الحساب والحماية',['diagnosis','risks','assets','metrics']]];
 const PAGES={home:'الرئيسية',calendar:'التقويم',reports:'التقارير',strategy:'استراتيجية العلامة',assistant:'المساعد الذكي',search:'البحث',backup:'النسخ والتصدير',more:'كل الأدوات'};
 const STATIC=new Set(['strategy','assistant','search','backup']);
 const STRAT=[['vision','الرؤية','ما الصورة التي نريد بناءها خلال ٦ أشهر؟'],['promise','وعد العلامة','ما القيمة التي يحصل عليها الجمهور باستمرار؟'],['audience','الجمهور الأساسي','من نخاطب؟ وما حاجته وسلوكه؟'],['edge','التميّز','لماذا يختار الجمهور حنان وسط البدائل؟'],['voice','نبرة الصوت','ما الكلمات والأسلوب المناسبان؟ وما غير المناسب؟'],['visual','الهوية البصرية','ما الخطوط والألوان وأسلوب الغلاف والترجمة؟'],['snapRole','دور سناب','فرضية: تعميق العلاقة عبر اليوميات والسلاسل والحوار'],['tiktokRole','دور تيك توك','فرضية: اكتشاف جمهور جديد عبر قيمة وقصص قصيرة'],['pillar1','محور محتوى ١','الاسم، حاجة الجمهور، مثال، ومؤشر النجاح'],['pillar2','محور محتوى ٢','الاسم، حاجة الجمهور، مثال، ومؤشر النجاح'],['pillar3','محور محتوى ٣','الاسم، حاجة الجمهور، مثال، ومؤشر النجاح'],['privacy','حدود الخصوصية','ما التفاصيل والأشخاص والمواقع التي لا تُنشر؟'],['collab','معايير التعاون','ما العلامات والمنتجات المقبولة وما شروط اختيارها؟'],['capacity','قدرة الإنتاج','كم مادة نستطيع إنتاجها بجودة ثابتة كل أسبوع؟'],['success','تعريف النجاح','ما المؤشر الأساسي؟ وما مؤشرات الجودة المساندة؟']];
@@ -655,9 +727,9 @@ function go(v,replace){
   if(S.view!==v)S.filter='all';
   S.view=v;
   if(location.hash.slice(1)!==v){replace?history.replaceState(null,'','#'+v):location.hash=v}
-  document.title=(v==='home'?'':viewTitle(v)+' | ')+'إدارة أعمال حنان المالكي';
-  document.querySelectorAll('[data-go]').forEach(b=>{const cur=b.dataset.go===v||(b.closest('nav.bottom')&&b.dataset.go==='more'&&!['home','calendar','content','tasks'].includes(v));cur?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current')});
-  const fabMod=MODS[v]?v:v==='home'||v==='calendar'?'tasks':null;
+  document.title=(v==='home'?'':viewTitle(v)+' | ')+'حنان المالكي';
+  document.querySelectorAll('[data-go]').forEach(b=>{const cur=b.dataset.go===v||(b.closest('nav.bottom')&&b.dataset.go==='more'&&!['home','calendar','life','tasks'].includes(v));cur?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current')});
+  const fabMod=MODS[v]?v:v==='home'?'life':v==='calendar'?'tasks':null;
   $('#fab').hidden=!fabMod;if(fabMod){$('#fab').textContent='+ '+MODS[fabMod].one;$('#fab').dataset.mod=fabMod;$('#ctaAdd').textContent='+ '+MODS[fabMod].one;$('#ctaAdd').dataset.mod=fabMod}
   $('#ctaAdd').hidden=!fabMod||!S.ready;closeMega();
   window.scrollTo(0,0);render();
@@ -666,17 +738,17 @@ window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(S.re
 $('#fab').addEventListener('click',()=>openForm($('#fab').dataset.mod));
 $('#ctaAdd').addEventListener('click',()=>openForm($('#ctaAdd').dataset.mod));
 $('#searchBtn').addEventListener('click',()=>go('search'));
-const SHORT={content:'النشر والتجهيز والنتائج',ideas:'مخزون الأفكار والتقييم',experiments:'تجارب التحسين',reviews:'تعلّمي ثم حسّني',deals:'الإعلانات والشراكات',finance:'التحصيل والمصروفات',contracts:'الالتزامات والحقوق',contacts:'الجهات والمتابعات',tasks:'التشغيل والقرارات',goals:'أهداف SMART',stages:'خطة الأسابيع الأربعة',governance:'من ينفّذ ومن يعتمد',diagnosis:'قوة وضعف وفرص',risks:'الوقاية والاستجابة',assets:'الحسابات والوصول',metrics:'أرقام كل شهر'};
+const SHORT={life:'الصحة والمال والتعلّم والعائلة',checkins:'وقفة أسبوعية وشهرية',content:'النشر والتجهيز والنتائج',ideas:'مخزون الأفكار والتقييم',experiments:'تجارب التحسين',reviews:'تعلّمي ثم حسّني',deals:'الإعلانات والشراكات',finance:'التحصيل والمصروفات',contracts:'الالتزامات والحقوق',contacts:'الجهات والمتابعات',tasks:'التشغيل والقرارات',goals:'أهداف SMART',stages:'خطة الأسابيع الأربعة',governance:'من ينفّذ ومن يعتمد',diagnosis:'قوة وضعف وفرص',risks:'الوقاية والاستجابة',assets:'الحسابات والوصول',metrics:'أرقام كل شهر'};
 const groupOf=k=>(GROUPS.find(g=>g[1].includes(k))||[''])[0];
+const BIZ=()=>GROUPS.filter(g=>g!==LIFE_GROUP);
 function renderSide(){
-  $('#mega').innerHTML=`<div class="g">صفحات</div>${[['vision','لوحة الأحلام','أحلام حنان كسيدة أعمال'],['strategy','استراتيجية العلامة','مرجع القرارات الإبداعية'],['reports','التقارير','الأداء والنمو والدخل'],['backup','النسخ والتصدير','إكسل ونسخة احتياطية']].map(([k,l,d])=>`<button data-go="${k}"><b>${l}</b><span>${d}</span></button>`).join('')}
-   ${GROUPS.map(([g,ks])=>`<div class="g">${g}</div>${ks.map(k=>`<button data-go="${k}"><b>${MODS[k].title}</b><span>${SHORT[k]}</span></button>`).join('')}`).join('')}`;
+  $('#mega').innerHTML=`<div class="g">صفحات</div>${[['strategy','استراتيجية العلامة','مرجع القرارات الإبداعية'],['reports','التقارير','الأداء والنمو والدخل'],['backup','النسخ والتصدير','إكسل ونسخة احتياطية']].map(([k,l,d])=>`<button data-go="${k}"><b>${l}</b><span>${d}</span></button>`).join('')}
+   ${BIZ().map(([g,ks])=>`<div class="g">${g}</div>${ks.map(k=>`<button data-go="${k}"><b>${MODS[k].title}</b><span>${SHORT[k]}</span></button>`).join('')}`).join('')}`;
 }
 function renderFoot(){
   const b=(k,l)=>`<li><button data-go="${k}">${l}</button></li>`;
-  $('#foot').innerHTML=`<div class="in"><div><a class="logo" href="#home" data-go="home"><span class="mark">ح</span><b>حنان المالكي</b></a><p>لوحة إدارة أعمال حنان المالكي · سناب شات وتيك توك · خاصة بفريق الإدارة.</p><button type="button" class="lnk" onclick="hananSignOut()">تسجيل الخروج</button></div>
-   ${GROUPS.slice(0,3).map(([g,ks])=>`<div><h5>${g}</h5><ul>${ks.map(k=>b(k,MODS[k].title)).join('')}</ul></div>`).join('')}
-   <div><h5>${GROUPS[3][0]}</h5><ul>${GROUPS[3][1].map(k=>b(k,MODS[k].title)).join('')}</ul></div>
+  $('#foot').innerHTML=`<div class="in"><div><a class="logo" href="#home" data-go="home"><span class="mark">ح</span><b>حنان المالكي</b></a><p>لوحة أهداف وأعمال حنان المالكي · خاصة بفريق الإدارة.</p><button type="button" class="lnk" onclick="hananSignOut()">تسجيل الخروج</button></div>
+   ${GROUPS.map(([g,ks])=>`<div><h5>${g}</h5><ul>${ks.map(k=>b(k,MODS[k].title)).join('')}${g===LIFE_GROUP[0]?b('vision','لوحة الأحلام'):''}</ul></div>`).join('')}
    <div><h5>أدوات</h5><ul>${b('vision','لوحة الأحلام')}${b('strategy','الاستراتيجية')}${b('reports','التقارير')}${b('backup','النسخ والتصدير')}</ul></div></div>`;
 }
 function closeMega(){const m=$('#mega');if(m){m.hidden=true;$('#ddbtn').setAttribute('aria-expanded','false')}}
@@ -729,6 +801,70 @@ function rModule(mk){
    ${body}`;
 }
 
+/* ---------- life goals ---------- */
+const avg=a=>a.length?a.reduce((s,v)=>s+v,0)/a.length:null;
+const daysTo=d=>Math.round((new Date(d+'T00:00')-new Date(today()+'T00:00'))/864e5);
+function areaTiles(sel){return `<div class="areas">${LIFE_AREAS.map(([k,l,c])=>{const g=activeLife().filter(x=>x.area===k);const av=avg(g.map(lifeProg).filter(v=>v!=null));
+  return `<button class="area" style="--ac:${c}" ${sel==null?`data-lifearea="${k}"`:`data-filter="${sel===k?'all':k}" aria-pressed="${sel===k}"`}><div class="rw"><b>${l}</b><span class="ring" style="--p:${Math.round((av||0)*100)}"><i>${av==null?'—':Math.round(av*100)+'٪'}</i></span></div><span>${g.length?nf(g.length)+' هدف نشط':'ما فيه أهداف'}</span></button>`}).join('')}</div>`}
+function goalCard(x){
+  const a=LA(x.area),p=lifeProg(x),done=x.status==='done',id=esc(x.id);let body='';
+  if(x.kind==='habit'){const t=today(),s=new Set(x.checks||[]),days=[...Array(7)].map((_,i)=>addDays(t,i-6));
+    body=`<div class="days">${days.map(d=>`<button class="dbtn${s.has(d)?' on':''}${d===t?' today':''}" data-hab="${id}" data-d="${d}" aria-pressed="${s.has(d)}" aria-label="${dateTxt(d)}"><span>${new Date(d+'T00:00').toLocaleDateString(LOC,{weekday:'short'})}</span><b>${s.has(d)?'✓':''}</b></button>`).join('')}</div>
+     <div class="gstat"><span>هذا الأسبوع <b>${nf(habWeek(x))}/${nf(habTarget(x))}</b></span><span>السلسلة <b>${nf(habStreak(x))}</b> يوم</span></div>`}
+  else if(x.kind==='number'){const c=num(x.current),tg=num(x.target),h=x.history||[];
+    body=`<div class="gnum">${c==null?'—':nf(c)} <small>/ ${tg==null?'—':nf(tg)} ${esc(x.unit||'')}</small></div><div class="gbar"><i style="width:${Math.round((p||0)*100)}%"></i></div>
+     <div class="gstat"><span>${pct(p)}</span><span>${h.length?'آخر تحديث '+dateTxt(h[h.length-1].date):''}</span></div>`}
+  else{const st=stepList(x),d=new Set(x.doneSteps||[]);
+    body=st.length?`<div class="steps">${st.map((s,i)=>`<button class="step${d.has(s)?' on':''}" data-step="${id}" data-i="${i}"><b>${d.has(s)?'✓':''}</b>${esc(s)}</button>`).join('')}</div><div class="gbar"><i style="width:${Math.round((p||0)*100)}%"></i></div><div class="gstat"><span>${nf(st.filter(s=>d.has(s)).length)} من ${nf(st.length)} خطوات</span><span>${pct(p)}</span></div>`:'<p class="hint">أضيفي الخطوات من «تعديل».</p>'}
+  const left=x.deadline&&!done?daysTo(x.deadline):null;
+  const act=(a,l,arg)=>`<button class="mini" data-act="${a}" data-mod="life" data-id="${id}"${arg?` data-arg="${arg}"`:''}>${l}</button>`;
+  return `<article class="gcard${done?' done':''}" style="--ac:${a[2]}">
+   <div class="tp"><span class="ap">${esc(a[1])}</span><span class="pill">${esc(lbl(GKIND,x.kind))}</span>${x.status&&x.status!=='active'?`<span class="pill ${done?'good':''}">${esc(lbl(GST,x.status))}</span>`:''}</div>
+   <h4>${esc(x.title)}</h4>${x.why?`<p class="why">${esc(x.why)}</p>`:''}
+   ${body}
+   ${x.deadline?`<p class="dl${left!=null&&left<0?' late':''}">الموعد: ${dateTxt(x.deadline)}${left==null?'':left>=0?` · باقي ${nf(left)} يوم`:' · فات الموعد'}</p>`:''}
+   <div class="acts"><button class="mini" data-edit="life" data-id="${id}">تعديل</button>
+    ${x.kind==='number'&&!done?act('gnum','+ تحديث الرقم'):''}
+    ${!done&&(p>=1||x.kind==='habit')?act('achieve',x.kind==='habit'?'صارت عادة ✦':'تحقق ✦'):''}
+    ${done?act('move','إرجاع','active'):x.status==='paused'?act('move','استئناف','active'):act('move','إيقاف مؤقت','paused')}</div></article>`;
+}
+function rLife(){
+  const all=S.data.life,f=S.filter,ord={active:0,paused:1,done:2};
+  let items=[...all].sort((a,b)=>(ord[a.status]??0)-(ord[b.status]??0)||((a.deadline||'9')<(b.deadline||'9')?-1:1));
+  if(f==='done')items=items.filter(x=>x.status==='done');
+  else if(f==='paused')items=items.filter(x=>x.status==='paused');
+  else{items=items.filter(x=>!x.status||x.status==='active');if(f!=='all')items=items.filter(x=>x.area===f)}
+  return `<div class="ph"><div><span class="eyebrow">حياة حنان</span><h2>أهداف حنان</h2><p>${MODS.life.desc} اضغطي على اليوم عشان تسجلين العادة، أو حدّثي الرقم، أو علّمي الخطوة اللي خلصت.</p></div><div class="btns"><button class="btn primary" data-new="life">+ هدف</button><button class="btn ghost" data-new="checkins">+ مراجعة</button></div></div>
+   ${areaTiles(f)}
+   <div class="seg" style="margin-top:1.2rem"><button data-filter="all" aria-pressed="${!['paused','done'].includes(f)}">النشطة</button><button data-filter="paused" aria-pressed="${f==='paused'}">المتوقفة</button><button data-filter="done" aria-pressed="${f==='done'}">المتحققة ${nf(all.filter(x=>x.status==='done').length)}</button></div>
+   ${!all.length?`<p class="empty">ما فيه أهداف للحين. ابدئي بهدف واحد بسيط، مثل «مشي ٣٠ دقيقة كل يوم» أو «ادخار ١٠ آلاف».</p>`:items.length?`<div class="ggrid">${items.map(goalCard).join('')}</div>`:'<p class="empty">ما فيه أهداف هنا.</p>'}`;
+}
+function lifeHome(){
+  const t=today(),la=activeLife(),habs=la.filter(x=>x.kind==='habit'),done=habs.filter(x=>(x.checks||[]).includes(t)).length;
+  const dl=la.filter(x=>x.deadline&&x.deadline<=addDays(t,30)).sort((a,b)=>a.deadline<b.deadline?-1:1);
+  const prog=la.filter(x=>x.kind!=='habit').map(x=>[x,lifeProg(x)]).filter(([,p])=>p!=null).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const last=[...S.data.checkins].filter(x=>x.date).sort((a,b)=>a.date>b.date?-1:1)[0];const since=last?daysTo(last.date)*-1:null;
+  return `<section style="margin-top:2.5rem"><span class="eyebrow">حياة حنان</span><h2 class="display" style="margin-bottom:1.5rem">أهداف حنان اليوم</h2>
+   ${areaTiles(null)}
+   ${!last||since>=7?`<div class="revnote"><span>${last?`صار لك ${nf(since)} يوم من آخر مراجعة. وقفة قصيرة تخلي الأهداف حيّة.`:'ما سويتي مراجعة للحين. ابدئي بمراجعة أسبوعية قصيرة.'}</span><button class="btn primary" data-new="checkins">+ مراجعة الآن</button></div>`:''}
+   <div class="two" style="margin-top:2rem">
+    <div><h3 class="sh">عادات اليوم <span class="c">${nf(done)}/${nf(habs.length)}</span></h3>
+     <div class="habs">${habs.length?habs.map(x=>{const on=(x.checks||[]).includes(t);return `<button class="hab${on?' on':''}" style="--ac:${LA(x.area)[2]}" data-hab="${esc(x.id)}" data-d="${t}" aria-pressed="${on}"><span class="ck">${on?'✓':''}</span><span class="tt">${esc(x.title)}</span><span class="sub">${x.freq==='weekly'?`الأسبوع ${nf(habWeek(x))}/${nf(habTarget(x))}`:`سلسلة ${nf(habStreak(x))} يوم`}</span></button>`}).join(''):`<p class="empty">ما فيه عادات للحين. <button class="lnk" data-new="life">أضيفي أول عادة</button></p>`}</div></div>
+    <div><h3 class="sh">التقدم في الأهداف</h3><div class="panel">${prog.length?prog.map(([x,p])=>`<div style="margin-bottom:.9rem;--ac:${LA(x.area)[2]}"><div class="gstat"><b style="font-size:.95rem">${esc(x.title)}</b><span>${pct(p)}</span></div><div class="gbar"><i style="width:${Math.round(p*100)}%"></i></div></div>`).join(''):'<p class="hint">لما تضيفين أهداف بأرقام أو خطوات، يظهر تقدمها هنا.</p>'}<button class="mini" data-go="life" style="margin-top:.4rem">كل الأهداف</button></div>
+     ${dl.length?`<h3 class="sh" style="margin-top:1.6rem">مواعيد قريبة <span class="c">${nf(dl.length)}</span></h3><div class="list">${dl.slice(0,6).map(x=>`<button class="item" data-edit="life" data-id="${esc(x.id)}"><span class="dot" style="background:${LA(x.area)[2]}"></span><span class="main"><span class="t">${esc(x.title)}</span><span class="m">${esc(LA(x.area)[1])}</span></span><span class="date ${x.deadline<t?'late':''}">${dateTxt(x.deadline)}</span></button>`).join('')}</div>`:''}</div>
+   </div></section>
+  <div class="secbreak"><span class="eyebrow">الأعمال والسوشيال</span><h2 class="display">أعمال حنان على المنصات</h2></div>`;
+}
+document.addEventListener('click',async e=>{
+  const la=e.target.closest('[data-lifearea]');if(la){go('life');S.filter=la.dataset.lifearea;render();return}
+  const h=e.target.closest('[data-hab]');
+  if(h){const x=S.data.life.find(i=>i.id===h.dataset.hab);if(!x)return;const d=h.dataset.d||today(),s=new Set(x.checks||[]),on=!s.has(d);on?s.add(d):s.delete(d);
+    h.disabled=true;try{await refs.life.doc(x.id).update({checks:[...s].sort().slice(-500)});if(on&&d===today()){burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2);toast('أحسنتِ ✦')}}catch(err){toast(errMsg(err))}finally{h.disabled=false}return}
+  const st=e.target.closest('[data-step]');
+  if(st){const x=S.data.life.find(i=>i.id===st.dataset.step);if(!x)return;const list=stepList(x),s=list[+st.dataset.i],d=new Set((x.doneSteps||[]).filter(v=>list.includes(v)));d.has(s)?d.delete(s):d.add(s);
+    st.disabled=true;try{await refs.life.doc(x.id).update({doneSteps:[...d]});if(d.size===list.length)toast('خلصت كل الخطوات! علّمي الهدف «تحقق» ✦')}catch(err){toast(errMsg(err))}finally{st.disabled=false}}
+});
+
 /* ---------- home ---------- */
 function agendaItem(e){return `<button class="item" data-edit="${e.mod}" data-id="${esc(e.id)}"><span class="dot" style="background:${e.c}"></span><span class="main"><span class="t">${esc(e.label)}</span><span class="m">${esc(e.type)}</span></span><span class="date ${e.date<today()?'late':''}">${dateTxt(e.date)}</span></button>`}
 function allEvents(){const out=[];for(const k of Object.keys(MODS)){const m=MODS[k];if(!m.ev)continue;for(const x of S.data[k])for(const e of m.ev(x))out.push({...e,mod:k,id:x.id})}return out}
@@ -770,23 +906,25 @@ function rHome(){
   const now=Date.now();
   const nxt=allEvents().map(e=>({...e,ts:new Date(e.date+'T'+(e.time||'09:00')).getTime()})).filter(e=>e.ts>now).sort((a,b)=>a.ts-b.ts)[0];
   S.cdTarget=nxt?nxt.ts:null;
-  const kpis=[box('finance',shortMoney(collected),'محصّل الشهر','ر.س'),box('finance',shortMoney(due),'مستحقات','ر.س'),box('tasks',nf(openT.length),'مهمة مفتوحة'),box('content',nf(pubC)+'/'+nf(monthC.length),'منشور من المخطط')];
+  const la=activeLife(),hb=la.filter(x=>x.kind==='habit'),lp=avg(la.map(lifeProg).filter(v=>v!=null));
+  const kpis=[box('life',nf(hb.filter(x=>(x.checks||[]).includes(t)).length)+'/'+nf(hb.length),'عادات اليوم'),box('life',nf(la.length),'هدف نشط'),box('life',lp==null?'—':Math.round(lp*100)+'٪','متوسط التقدم'),box('tasks',nf(openT.length),'مهمة مفتوحة')];
   const enter=!S.heroIn;S.heroIn=true;
   return `<section class="hero${enter?' enter':''}" id="hero">
     <div class="herobg" id="heroBg"></div>
     <div class="hin">
-    <h1>إدارة أعمال<br>حنان المالكي</h1>
+    <h1>أهداف وأعمال<br>حنان المالكي</h1>
     <figure class="hquote"><img src="mbs.jpg" alt="ولي العهد الأمير محمد بن سلمان" width="96" height="96"><blockquote><p>«طموحنا عنان السماء»</p><cite>ولي العهد الأمير محمد بن سلمان</cite></blockquote></figure>
     <p class="tagline">نبني ثقة تكبر كل يوم، و<em>أعمالًا</em> تكبر معها.</p>
     <div class="hrow"><span class="scrollcue">مرّر<i></i></span>
      ${nxt?`<div class="cd"><div class="kl">أقرب موعد يبدأ بعد</div><div class="boxes">
        <div class="box"><b id="cdD">00</b><span>يوم</span></div><div class="box"><b id="cdH">00</b><span>ساعة</span></div><div class="box"><b id="cdM">00</b><span>دقيقة</span></div><div class="box"><b id="cdS">00</b><span>ثانية</span></div></div>
        <button class="cdl" data-edit="${nxt.mod}" data-id="${esc(nxt.id)}">${esc(nxt.label)} · ${dateTxt(nxt.date)}${nxt.time?' '+esc(nxt.time):''}</button></div>`
-      :`<div><div class="kl">صورة الأعمال الآن</div><div class="boxes">${kpis.join('')}</div></div>`}
+      :`<div><div class="kl">صورة اليوم</div><div class="boxes">${kpis.join('')}</div></div>`}
     </div></div>
     <svg class="spark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="rgba(255,255,255,.55)"/></svg>
   </section>
-  ${nxt?`<div class="tiles" style="margin-top:1.5rem">${[['finance',money(collected),'محصّل هذا الشهر',1],['finance',money(due),'مستحقات غير محصّلة'],['tasks',nf(openT.length),'مهمة مفتوحة'],['content',nf(pubC)+' / '+nf(monthC.length),'منشور من المخطط هذا الشهر']].map(([k,v,l,h])=>`<button class="tile${h?' hero':''}" data-go="${k}"><b>${v}</b><span>${l}</span></button>`).join('')}</div>`:''}
+  ${lifeHome()}
+  ${nxt?`<div class="tiles" style="margin-top:1.5rem">${[['finance',money(collected),'محصّل هذا الشهر',1],['finance',money(due),'مستحقات غير محصّلة'],['tasks',nf(openT.length),'مهمة مفتوحة'],['content',nf(pubC)+' / '+nf(monthC.length),'منشور من المخطط هذا الشهر']].map(([k,v,l,h])=>`<button class="tile${h?' hl':''}" data-go="${k}"><b>${v}</b><span>${l}</span></button>`).join('')}</div>`:''}
   ${brands.length?`<section class="strip"><div class="top"><span class="eyebrow">شركاء النجاح</span><button class="round" id="mqPause" aria-pressed="false" aria-label="إيقاف الحركة"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg></button></div>
     <div class="marquee" id="mq"><div class="track">${[...brands,...brands,...(brands.length<5?[...brands,...brands]:[])].map((b,i)=>`<div class="logo-card"${i>=brands.length?' aria-hidden="true"':''}>${esc(b)}</div>`).join('')}</div></div><div class="weave"></div></section>`:''}
   <div class="two" style="margin-top:2.5rem">
@@ -795,7 +933,7 @@ function rHome(){
    <div><h3 class="sh">الأيام السبعة الجاية <span class="c">${nf(ev.length)}</span></h3>
     <div class="list">${ev.length?ev.slice(0,10).map(agendaItem).join(''):'<p class="empty">ما فيه مواعيد هذا الأسبوع.</p>'}</div></div>
   </div>
-  <div style="margin-top:4rem"><span class="eyebrow">أقسام اللوحة</span><h2 class="display" style="margin-bottom:2rem">لوحة واحدة. خمس طرق للإدارة.</h2>
+  <div style="margin-top:4rem"><span class="eyebrow">أقسام اللوحة</span><h2 class="display" style="margin-bottom:2rem">خمس طرق لإدارة الأعمال.</h2>
   <div class="features">
    ${feat('٠١','content','النشر والتجهيز','تقويم المحتوى','خطة النشر للمنصتين من الفكرة إلى الاعتماد والنتيجة، مع قائمة تجهيز لكل مادة.',[[nf(monthC.length),'مخطط هذا الشهر'],[nf(pubC),'منشور'],[nf(unapproved),'بانتظار الاعتماد']],'افتحي التقويم')}
    ${feat('٠٢','deals','الإعلانات والشراكات','التعاونات','كل طلب إعلاني من التفاوض إلى التنفيذ والدفع، مربوط بالعقود والمالية.',[[nf(D.deals.filter(x=>x.status==='nego').length),'قيد التفاوض'],[nf(D.deals.filter(x=>x.status==='confirmed').length),'مؤكد'],[shortMoney(pipeline),'قيمة مفتوحة']],'افتحي التعاونات')}
@@ -805,7 +943,7 @@ function rHome(){
   </div></div>
   <div class="two" style="margin-top:3rem">
    <div><h3 class="sh">نمو المتابعين</h3><div class="panel chart" dir="ltr">${multiLine(ms.slice(-6).map(x=>x.month),[{name:'سناب',c:'#FFE36B',v:ms.slice(-6).map(x=>num(x.followers))},{name:'تيك توك',c:'#6FE0D8',v:ms.slice(-6).map(x=>num(x.ttFollowers))}])}</div></div>
-   <div><h3 class="sh">أهداف الشهر</h3><div class="panel">${goals.length?goals.map(x=>{const p=goalProg(x);return `<div style="margin-bottom:.9rem"><b style="font-size:.95rem">${esc(x.title)}</b><div class="bar ${p>=1?'good':''}"><i style="width:${Math.min(100,p*100)}%"></i></div><div class="barlbl">${pct(p)}</div></div>`}).join(''):`<p class="hint">${D.goals.length?'عبّي خط الأساس والمستهدف والفعلي لأهدافك عشان يظهر التقدم.':'ما فيه أهداف.'}</p><button class="mini" data-go="goals" style="margin-top:.6rem">فتح الأهداف</button>`}</div></div>
+   <div><h3 class="sh">أهداف المنصات</h3><div class="panel">${goals.length?goals.map(x=>{const p=goalProg(x);return `<div style="margin-bottom:.9rem"><b style="font-size:.95rem">${esc(x.title)}</b><div class="bar ${p>=1?'good':''}"><i style="width:${Math.min(100,p*100)}%"></i></div><div class="barlbl">${pct(p)}</div></div>`}).join(''):`<p class="hint">${D.goals.length?'عبّي خط الأساس والمستهدف والفعلي لأهدافك عشان يظهر التقدم.':'ما فيه أهداف.'}</p><button class="mini" data-go="goals" style="margin-top:.6rem">فتح الأهداف</button>`}</div></div>
   </div>`;
 }
 document.addEventListener('click',e=>{const b=e.target.closest('#mqPause');if(!b)return;const mq=$('#mq');const p=!mq.classList.contains('paused');mq.classList.toggle('paused',p);b.setAttribute('aria-pressed',p);b.setAttribute('aria-label',p?'تشغيل الحركة':'إيقاف الحركة');b.innerHTML=p?'<svg class="ic" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>':'<svg class="ic" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg>'});
@@ -936,7 +1074,7 @@ function rReports(){
   const kmax=Math.max(1,...Object.values(kinds));
   return `<div class="ph"><div><h2>التقارير</h2><p>أداء المنصتين والمحتوى والدخل. قارني دائمًا على نفس المنصة ونفس نافذة القياس.</p></div></div>
   <div class="tiles">
-   <div class="tile hero"><b>${pct(exec)}</b><span>نسبة تنفيذ خطة هذا الشهر</span></div>
+   <div class="tile hl"><b>${pct(exec)}</b><span>نسبة تنفيذ خطة هذا الشهر</span></div>
    <div class="tile"><b>${nf(recent.length)}</b><span>محتوى منشور آخر ٣٠ يوم</span></div>
    <div class="tile"><b>${pct(erTT)}</b><span>متوسط تفاعل تيك توك (٣٠ يوم)</span></div>
    <div class="tile"><b>${pct(crS)}</b><span>متوسط إكمال سلاسل سناب (٣٠ يوم)</span></div>
@@ -1053,8 +1191,9 @@ function bindSearch(){const q=$('#q');const run=()=>{S.q=q.value;const v=q.value
 function rMore(){
   const t=(k,l,d)=>`<button data-go="${k}"><b>${l}</b><span>${d}</span></button>`;
   return `<div class="ph"><div><h2>كل الأدوات</h2></div></div>
-   <div class="mgrid">${t('vision','لوحة الأحلام','أحلام حنان كسيدة أعمال')}${t('reports','التقارير','الأداء والدخل')}${t('strategy','الاستراتيجية','مرجع العلامة')}${t('search','البحث','في كل الأقسام')}</div>
-   ${GROUPS.map(([g,ks])=>`<h3 class="sh">${g}</h3><div class="mgrid">${ks.map(k=>t(k,MODS[k].title,nf(S.data[k].length)+' سجل')).join('')}</div>`).join('')}
+   <h3 class="sh">حياة حنان</h3><div class="mgrid">${t('life','أهداف حنان',nf(activeLife().length)+' هدف نشط')}${t('checkins','المراجعات',nf(S.data.checkins.length)+' مراجعة')}${t('vision','لوحة الأحلام','الأحلام الكبيرة')}</div>
+   <h3 class="sh">صفحات</h3><div class="mgrid">${t('reports','التقارير','الأداء والدخل')}${t('strategy','الاستراتيجية','مرجع العلامة')}${t('search','البحث','في كل الأقسام')}</div>
+   ${BIZ().map(([g,ks])=>`<h3 class="sh">${g}</h3><div class="mgrid">${ks.map(k=>t(k,MODS[k].title,nf(S.data[k].length)+' سجل')).join('')}</div>`).join('')}
    <h3 class="sh">أدوات</h3><div class="mgrid">${t('backup','النسخ والتصدير','إكسل ونسخة احتياطية')}</div>`;
 }
 
@@ -1089,7 +1228,10 @@ async function importJson(file){
 
 /* ============ forms ============ */
 let FORM=null;
-function fieldHTML(f,v){const[k,l,t,o={}]=f;
+function fieldHTML(f,v){const h=fieldHTML0(f,v),o=f[3]||{};return o.show?h.replace(/^<(\w+)/,`<$1 data-show="${o.show[0]}:${o.show[1]}"`):h}
+function syncShow(){const fm=$('#frm');fm.querySelectorAll('[data-show]').forEach(el=>{const[k,val]=el.dataset.show.split(':');const s=fm.elements[k];el.hidden=!!s&&s.value!==val})}
+$('#frm').addEventListener('change',e=>{if(e.target.name)syncShow()});
+function fieldHTML0(f,v){const[k,l,t,o={}]=f;
   if(t==='sec')return `<div class="fsec">${l}</div>`;
   const full=o.full||t==='textarea'?' full':'';
   if(t==='image')return `<label class="full">${l}<input type="file" name="${k}" accept="image/*">${v?`<img class="prev" src="${esc(/^https?:/.test(v)?v:'/_blob/'+v)}" alt="" onerror="this.remove()">`:'<span class="hint">اختياري: صورة تعبّر عن الحلم</span>'}</label>`;
@@ -1098,7 +1240,7 @@ function fieldHTML(f,v){const[k,l,t,o={}]=f;
   if(t==='textarea')return `<label class="${full}">${l}<textarea name="${k}">${esc(v)}</textarea></label>`;
   return `<label class="${full}">${l}<input name="${k}" type="${t}" value="${esc(v??'')}"${o.req?' required':''}${t==='number'?' inputmode="decimal" step="any"':''}></label>`;
 }
-function defaultFor(o){if(!o||o.def==null)return '';if(o.def==='_month')return today().slice(0,7);if(o.def==='_week'){const d=new Date(today()+'T00:00');return addDays(today(),-d.getDay())}return o.def}
+function defaultFor(o){if(!o||o.def==null)return '';if(o.def==='_today')return today();if(o.def==='_month')return today().slice(0,7);if(o.def==='_week'){const d=new Date(today()+'T00:00');return addDays(today(),-d.getDay())}return o.def}
 function openForm(mk,item,prefill,after){
   const m=MODS[mk],it=item||{};
   FORM={mk,item,after};
@@ -1106,7 +1248,7 @@ function openForm(mk,item,prefill,after){
   $('#frm').innerHTML=`<div class="dh"><h2>${item?'تعديل':'إضافة'} ${m.one}${it.code?` <span class="code">${esc(it.code)}</span>`:''}</h2><button type="button" class="mini" data-close>إغلاق</button></div>
    <div class="db"><div class="fgrid">${m.fields.map(f=>fieldHTML(f,vals(f))).join('')}</div></div>
    <div class="df"><button class="btn primary" type="submit">حفظ</button><button class="btn ghost" type="button" data-close>إلغاء</button>${item?'<button class="btn danger" type="button" data-del>حذف</button>':''}</div>`;
-  $('#dlg').showModal();
+  syncShow();$('#dlg').showModal();
 }
 function openMini(title,fields,onSave){
   FORM={mini:onSave};
@@ -1159,7 +1301,8 @@ document.addEventListener('click',async e=>{
   const mk=ac.dataset.mod,x=S.data[mk].find(i=>i.id===ac.dataset.id);if(!x)return;
   const a=ac.dataset.act;
   try{
-    if(a==='achieve'){ac.disabled=true;burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2);await refs[mk].doc(x.id).update({status:'done',doneAt:today()});toast('مبروك! تحقق الحلم ✦')}
+    if(a==='achieve'){ac.disabled=true;burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2);await refs[mk].doc(x.id).update({status:'done',doneAt:today()});toast(mk==='life'?'مبروك! تحقق الهدف ✦':'مبروك! تحقق الحلم ✦')}
+    else if(a==='gnum')openMini('تحديث الرقم · '+x.title,[['val','الرقم الحالي'+(x.unit?' ('+x.unit+')':''),'number',{req:1,val:num(x.current)??''}],['date','التاريخ','date',{val:today()}]],async v=>{const val=num(v.val);if(val==null)throw new Error('val');const hist=[...(x.history||[]),{date:v.date||today(),value:val}].slice(-300);await refs.life.doc(x.id).update({current:val,history:hist});toast('تم التحديث')});
     else if(a==='move'){ac.disabled=true;await refs[mk].doc(x.id).update({status:ac.dataset.arg});toast('تم التحديث')}
     else if(a==='contacted'){await refs[mk].doc(x.id).update({lastContact:today(),status:x.status==='new'?'contacted':x.status});toast('تم تسجيل التواصل')}
     else if(a==='toContent')openForm('content',null,{title:x.title,platform:x.platform||'snap',ideaRef:x.code||'',goal:x.goal||'',script:[x.hook,x.summary,x.cta].filter(Boolean).join('\n')},async()=>{await refs.ideas.doc(x.id).update({status:'used'})});
