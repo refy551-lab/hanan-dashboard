@@ -722,13 +722,17 @@ void new Date().toLocaleDateString(LOC,{weekday:'long',day:'numeric',month:'long
 
 /* ============ welcome sound ============ */
 const muted=()=>{try{return localStorage.getItem('hanan-mute')==='1'}catch(e){return false}};
-function playWelcome(){if(muted())return;const a=new Audio('welcome.m4a?v=3');a.preload='auto';a.setAttribute('playsinline','');let done=false;
-  const evs=['touchend','pointerup','mouseup','click','keydown'],off=()=>evs.forEach(n=>document.removeEventListener(n,go,true));
+let welOff=null;
+function playWelcome(){if(muted())return;if(welOff)welOff();const a=new Audio('welcome.m4a?v=3');a.preload='auto';a.setAttribute('playsinline','');let done=false;
+  const evs=['touchend','pointerup','mouseup','click','keydown'],off=()=>{evs.forEach(n=>document.removeEventListener(n,go,true));welOff=null};welOff=off;
   const go=()=>{if(done)return;done=true;off();a.currentTime=0;a.play().catch(()=>{})};
   evs.forEach(n=>document.addEventListener(n,go,true));
   a.play().then(()=>{done=true;off()}).catch(()=>{});
 }
 playWelcome();
+let hidAt=0;
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')hidAt=Date.now();else if(hidAt&&Date.now()-hidAt>8000){hidAt=0;playWelcome()}});
+addEventListener('pageshow',e=>{if(e.persisted)playWelcome()});
 document.addEventListener('click',e=>{const b=e.target.closest('#muteW');if(!b)return;const m=!muted();try{localStorage.setItem('hanan-mute',m?'1':'0')}catch(err){}b.textContent=m?'تشغيل صوت الترحيب':'إيقاف صوت الترحيب';toast(m?'وقّفنا صوت الترحيب':'صوت الترحيب يشتغل مع كل فتح')});
 
 /* ============ navigation ============ */
