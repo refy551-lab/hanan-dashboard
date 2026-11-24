@@ -722,7 +722,7 @@ void new Date().toLocaleDateString(LOC,{weekday:'long',day:'numeric',month:'long
 
 /* ============ welcome sound ============ */
 const muted=()=>{try{return localStorage.getItem('hanan-mute')==='1'}catch(e){return false}};
-function playWelcome(){if(muted())return;const a=new Audio('welcome.m4a?v=2');a.preload='auto';a.setAttribute('playsinline','');let done=false;
+function playWelcome(){if(muted())return;const a=new Audio('welcome.m4a?v=3');a.preload='auto';a.setAttribute('playsinline','');let done=false;
   const evs=['touchend','pointerup','mouseup','click','keydown'],off=()=>evs.forEach(n=>document.removeEventListener(n,go,true));
   const go=()=>{if(done)return;done=true;off();a.currentTime=0;a.play().catch(()=>{})};
   evs.forEach(n=>document.addEventListener(n,go,true));
