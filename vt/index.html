@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>خطوة من خطوات توسّع نجاحي | حنان المالكي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;500;800;900&family=Amiri&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: cinematic brand film from a media agency, confident and restrained
+IDEA: a title sequence: letterbox, film grain, light leaks, kinetic type
+PICTURE: huge type set in two weights (hairline 200 vs black 900), one iPad reveal
+COLOUR and TYPE: near-black, warm orange light, a little violet; Alexandria only
+LAYOUT: 9:16 stage, one idea per shot, hard cuts with flash and blur
+*/
+:root{--o:#FF9A4A;--o2:#FFC27F;--v:#9A7BFF;--ink:#F6F2EE;--mute:rgba(246,242,238,.6);
+ color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html,body{height:100%}
+body{background:#000;color:var(--ink);font-family:"Alexandria","Cairo",Tahoma,sans-serif;display:grid;place-items:center;overflow:hidden}
+button{font:inherit;cursor:pointer;color:inherit}
+
+.stage{position:relative;aspect-ratio:9/16;height:min(100%,calc(100vw*16/9));overflow:hidden;container-type:size;background:#07060A}
+.glow{position:absolute;border-radius:50%;filter:blur(14cqmin);pointer-events:none}
+.glow.a{width:90cqmin;height:90cqmin;background:radial-gradient(circle,rgba(154,123,255,.55),transparent 65%);top:-30cqmin;right:-35cqmin;animation:g1 12s ease-in-out infinite alternate}
+.glow.b{width:80cqmin;height:80cqmin;background:radial-gradient(circle,rgba(255,154,74,.45),transparent 65%);bottom:-30cqmin;left:-30cqmin;animation:g2 14s ease-in-out infinite alternate}
+@keyframes g1{to{transform:translate(-18cqmin,20cqmin) scale(1.2)}}
+@keyframes g2{to{transform:translate(20cqmin,-16cqmin) scale(1.15)}}
+.leak{position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 35%,rgba(255,170,90,.55) 48%,rgba(255,120,60,.25) 55%,transparent 68%);mix-blend-mode:screen;opacity:0;pointer-events:none;z-index:6}
+.play .leak{animation:leak 1.3s var(--d) ease-in-out both}
+@keyframes leak{0%{opacity:0;transform:translateX(70%)}35%{opacity:1}100%{opacity:0;transform:translateX(-70%)}}
+.grain{position:absolute;inset:-50%;z-index:8;pointer-events:none;opacity:.13;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .5s steps(4) infinite}
+@keyframes grain{25%{transform:translate(-4%,3%)}50%{transform:translate(3%,-5%)}75%{transform:translate(-2%,-3%)}100%{transform:translate(4%,2%)}}
+.vig{position:absolute;inset:0;z-index:7;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.7))}
+.bar{position:absolute;left:0;right:0;height:7cqh;background:#000;z-index:9}
+.bar.t{top:0}.bar.b{bottom:0}
+.play .bar.t{animation:barT 1.2s .1s cubic-bezier(.7,0,.2,1) both}
+.play .bar.b{animation:barB 1.2s .1s cubic-bezier(.7,0,.2,1) both}
+@keyframes barT{from{transform:translateY(-100%)}}
+@keyframes barB{from{transform:translateY(100%)}}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:7;pointer-events:none}
+.play .flash{animation:flash .5s var(--d) ease-out both}
+@keyframes flash{0%{opacity:0}15%{opacity:.85}100%{opacity:0}}
+
+.sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10cqmin;opacity:0;z-index:2}
+.play .sc{animation:in .5s var(--a) ease-out both,out .45s var(--b) cubic-bezier(.6,0,.8,.4) forwards}
+.play .sc.last{animation:in .5s var(--a) ease-out both}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@keyframes out{to{opacity:0;transform:scale(1.12);filter:blur(2cqmin)}}
+
+.hair{font-weight:200;letter-spacing:.02em}
+.blk{font-weight:900;letter-spacing:-.02em}
+.o{color:var(--o)}
+.lab{font-weight:300;font-size:3.6cqmin;letter-spacing:.35em;color:var(--o2)}
+.x{display:block;opacity:0}
+.play .rise{animation:rise 1s var(--d) cubic-bezier(.16,.84,.24,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(6cqmin);filter:blur(1.4cqmin)}to{opacity:1;transform:none;filter:none}}
+.play .slam{animation:slam .7s var(--d) cubic-bezier(.2,1.3,.4,1) both}
+@keyframes slam{0%{opacity:0;transform:scale(1.8);filter:blur(3cqmin)}60%{opacity:1;filter:none}100%{opacity:1;transform:none}}
+.play .wipe{animation:wipe 1.1s var(--d) cubic-bezier(.7,0,.2,1) both}
+@keyframes wipe{from{opacity:1;clip-path:inset(0 0 0 100%)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+.play .track{animation:track 1.6s var(--d) cubic-bezier(.16,.84,.24,1) both}
+@keyframes track{from{opacity:0;letter-spacing:.6em;filter:blur(1cqmin)}to{opacity:1;letter-spacing:.35em;filter:none}}
+.rule{display:block;width:0;height:.35cqmin;background:linear-gradient(90deg,transparent,var(--o),transparent);margin:5cqmin auto}
+.play .rule{animation:rule 1.2s var(--d) cubic-bezier(.7,0,.2,1) both}
+@keyframes rule{to{width:56cqmin}}
+
+.nm{font-size:17cqmin;line-height:1.1;white-space:nowrap}
+
+.pic{width:44cqmin;height:44cqmin;border-radius:50%;object-fit:cover;box-shadow:0 0 0 .5cqmin var(--o),0 0 0 3cqmin rgba(255,154,74,.1),0 0 18cqmin rgba(255,154,74,.35);opacity:0}
+.play .pic{animation:pic 1.4s var(--d) cubic-bezier(.16,.84,.24,1) both}
+@keyframes pic{from{opacity:0;transform:scale(1.25);filter:blur(2cqmin) grayscale(1)}to{opacity:1;transform:none;filter:none}}
+.q{font-size:10cqmin;line-height:1.3;margin-top:8cqmin}
+.who{font-weight:300;font-size:3.6cqmin;color:var(--mute);margin-top:4cqmin}
+
+.k1{font-size:13cqmin;line-height:1.1}
+.k2{font-size:30cqmin;line-height:1.05}
+.k3{font-size:8cqmin;line-height:1.4}
+.k4{font-size:24cqmin;line-height:1.1}
+.shake{display:block}
+.play .shake{animation:shake .5s var(--d) both}
+@keyframes shake{0%,100%{transform:none}20%{transform:translate(1cqmin,-.6cqmin)}40%{transform:translate(-1cqmin,.5cqmin)}60%{transform:translate(.6cqmin,.4cqmin)}80%{transform:translate(-.4cqmin,-.3cqmin)}}
+
+.dev{width:86cqmin;perspective:180cqmin}
+.tab{border-radius:4cqmin;padding:1.8cqmin;background:linear-gradient(160deg,#2a2536,#0c0a12);box-shadow:0 0 0 .3cqmin rgba(255,255,255,.14),0 12cqmin 24cqmin rgba(0,0,0,.7),0 0 26cqmin rgba(255,154,74,.22);opacity:0;transform-origin:50% 80%}
+.play .tab{animation:devIn 1.8s var(--d) cubic-bezier(.16,.84,.24,1) both}
+@keyframes devIn{from{opacity:0;transform:rotateX(55deg) translateY(30cqmin) scale(.7)}to{opacity:1;transform:none}}
+.scr{border-radius:2.4cqmin;overflow:hidden;background:linear-gradient(180deg,#15111F,#1B1430);aspect-ratio:4/3;position:relative;display:flex;flex-direction:column}
+.scr::after{content:"";position:absolute;inset:-20% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.3) 50%,transparent 58%);opacity:0}
+.play .scr::after{animation:shine 1.2s var(--d) ease-in-out both}
+@keyframes shine{0%{opacity:1;transform:translateX(70%)}100%{opacity:1;transform:translateX(-80%)}}
+.nb{background:#4A3478;display:flex;align-items:center;gap:1.4cqmin;padding:1.6cqmin 2.4cqmin}
+.nb i{width:4.4cqmin;height:4.4cqmin;border-radius:1.2cqmin;background:linear-gradient(135deg,var(--o2),var(--o));color:#1E1430;font-style:normal;font-weight:900;font-size:2.6cqmin;display:grid;place-items:center}
+.nb b{font-size:2.5cqmin;font-weight:800}
+.nb span{font-size:1.8cqmin;color:rgba(255,255,255,.7);padding:.3cqmin 1.2cqmin;border-radius:1cqmin}
+.nb span.on{background:rgba(255,255,255,.14);color:#fff}
+.nb u{margin-inline-start:auto;text-decoration:none;background:var(--o);color:#1E1430;font-weight:800;font-size:1.8cqmin;padding:.6cqmin 1.6cqmin;border-radius:1.2cqmin}
+.hr{flex:1;display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:3cqmin;padding:3cqmin 4cqmin;text-align:start;background:radial-gradient(40cqmin 26cqmin at 80% 20%,rgba(185,162,255,.3),transparent 65%)}
+.hr .k{color:var(--o2);font-weight:500;font-size:2cqmin;letter-spacing:.2em}
+.hr h4{font-family:"Amiri",serif;font-weight:400;font-size:6.2cqmin;line-height:1.2;white-space:nowrap}
+.hr p{color:var(--mute);font-size:2.1cqmin;font-weight:300;margin-top:1cqmin}
+.hr .qq{border-radius:3cqmin;border:.2cqmin solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);padding:2.4cqmin 1.6cqmin;text-align:center}
+.hr .qq img{width:9cqmin;height:9cqmin;border-radius:50%;object-fit:cover;border:.4cqmin solid var(--o2);display:block;margin:0 auto 1cqmin}
+.hr .qq b{color:var(--o2);font-size:2.3cqmin;font-weight:800;white-space:nowrap}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4cqmin;padding:0 4cqmin 3cqmin}
+.kp div{border:.2cqmin solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);border-radius:1.6cqmin;padding:1.2cqmin;text-align:center;font-size:1.5cqmin;color:var(--mute)}
+.kp div b{display:block;color:var(--o);font-size:3.2cqmin;font-weight:900;line-height:1.2}
+.cap{margin-top:9cqmin;font-size:7cqmin;line-height:1.3}
+
+.f1{font-size:8.5cqmin;line-height:1.4}
+.f2{font-size:15cqmin;line-height:1.15}
+.f3{font-size:12cqmin;line-height:1.25}
+.big{font-size:19cqmin;line-height:1.15;white-space:nowrap;background:linear-gradient(100deg,var(--o2),var(--o) 60%,#ff6a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.star{position:absolute;left:50%;top:50%;width:2.4cqmin;height:2.4cqmin;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0;z-index:1}
+.play .star{animation:burst 1.8s var(--d) cubic-bezier(.15,.7,.3,1) both}
+@keyframes burst{0%{opacity:1;transform:translate(-50%,-50%) scale(.3)}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.4) rotate(200deg)}}
+.thanks{font-weight:300;font-size:4.4cqmin;color:var(--o2);letter-spacing:.2em}
+.sign{position:absolute;bottom:12cqh;left:0;right:0;text-align:center}
+.sign span{font-weight:300;font-size:4cqmin;color:var(--mute);letter-spacing:.15em}
+.sign b{font-weight:800;font-size:8cqmin;margin-top:1cqmin}
+
+.ctl{position:fixed;inset:auto 0 calc(1.2rem + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;padding:0 1rem;transition:opacity .4s;z-index:20}
+.ctl.hide{opacity:0;pointer-events:none}
+.ctl button{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);border-radius:999px;padding:.6rem 1.2rem;font-weight:700;min-height:44px}
+.ctl button.main{background:var(--o);border-color:var(--o);color:#1E1430}
+.hint{position:fixed;top:calc(1rem + env(safe-area-inset-top,0px));inset-inline:1rem;margin-inline:auto;max-width:30rem;text-align:center;font-size:.88rem;color:var(--mute);background:rgba(255,255,255,.08);border-radius:.9rem;padding:.6rem .9rem;transition:opacity .4s;z-index:20}
+.hint.hide{opacity:0}
+@media (prefers-reduced-motion:reduce){.grain,.glow{animation:none}}
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<p class="hint" id="hint">لحفظه فيديو: شغّلي «تسجيل الشاشة» من مركز التحكم، ثم اضغطي تشغيل. الأزرار تختفي وقت العرض.</p>
+<div class="ctl" id="ctl">
+  <button class="main" id="playBtn">▶ تشغيل</button>
+  <button id="muteBtn">🔊 الصوت</button>
+  <button id="fsBtn">ملء الشاشة</button>
+</div>
+
+<template id="tpl">
+  <i class="glow a"></i><i class="glow b"></i>
+
+  <section class="sc" style="--a:.3s;--b:4.2s">
+    <span class="x lab track" style="--d:.9s">سيدة الأعمال</span>
+    <i class="rule" style="--d:1.4s"></i>
+    <span class="x nm blk wipe" style="--d:1.9s">حنان المالكي</span>
+  </section>
+  <i class="leak" style="--d:4s"></i>
+
+  <section class="sc" style="--a:4.4s;--b:8.6s">
+    <img class="pic" style="--d:4.5s" src="mbs.jpg" alt="ولي العهد الأمير محمد بن سلمان">
+    <span class="x q blk rise" style="--d:5.4s">«طموحنا <span class="o">عنان السماء</span>»</span>
+    <span class="x who rise" style="--d:6.1s">ولي العهد الأمير محمد بن سلمان</span>
+  </section>
+  <i class="flash" style="--d:8.55s"></i>
+
+  <section class="sc" style="--a:8.7s;--b:11.7s">
+    <span class="x k1 hair rise" style="--d:8.9s">أعمالي</span>
+    <span class="shake" style="--d:9.75s"><span class="x k2 blk o slam" style="--d:9.6s">كبرت</span></span>
+  </section>
+  <i class="leak" style="--d:11.5s"></i>
+
+  <section class="sc" style="--a:11.9s;--b:16.2s">
+    <span class="x k3 hair rise" style="--d:12.1s">وصارت تحتاج</span>
+    <span class="x k4 blk slam" style="--d:12.9s">منصّة</span>
+    <span class="x k3 hair rise" style="--d:13.7s">تجمعها في <b class="blk o">مكان واحد</b></span>
+  </section>
+  <i class="flash" style="--d:16.15s"></i>
+
+  <section class="sc" style="--a:16.3s;--b:21.6s">
+    <span class="x lab track" style="--d:16.4s">منصّتي الخاصة</span>
+    <div class="dev" style="margin-top:6cqmin"><div class="tab" style="--d:16.7s"><div class="scr" style="--d:18.3s">
+      <div class="nb"><i>ح</i><b>حنان المالكي</b><span class="on">الرئيسية</span><span>الأهداف</span><span>التقويم</span><span>المهام</span><u>+ هدف</u></div>
+      <div class="hr"><div><span class="k">سيدة الأعمال</span><h4>حنان المالكي</h4><p>نبني ثقة تكبر كل يوم، وأعمالًا تكبر معها.</p></div><div class="qq"><img src="mbs.jpg" alt=""><b>«طموحنا عنان السماء»</b></div></div>
+      <div class="kp"><div><b>٣/٤</b>عادات اليوم</div><div><b>٦</b>أهداف نشطة</div><div><b>٧٢٪</b>التقدم</div><div><b>٤</b>مهام</div></div>
+    </div></div></div>
+    <span class="x cap rise" style="--d:18.9s"><span class="hair">أقدر أدير منها</span> <b class="blk o">كل شي</b></span>
+  </section>
+  <i class="leak" style="--d:21.4s"></i>
+
+  <section class="sc" style="--a:21.8s;--b:26.6s">
+    <div id="stars"></div>
+    <span class="x f1 hair rise" style="--d:22s">وها أنا أشارككم</span>
+    <span class="x f2 blk rise" style="--d:22.8s">خطوة</span>
+    <span class="x f1 hair rise" style="--d:23.4s">من خطوات</span>
+    <span class="x big blk slam" style="--d:24.1s">توسّع نجاحي</span>
+  </section>
+  <i class="flash" style="--d:26.55s"></i>
+
+  <section class="sc last" style="--a:26.7s">
+    <span class="x f1 hair rise" style="--d:26.9s">لأنكم</span>
+    <span class="x f3 blk rise" style="--d:27.7s">جزء لا يتجزأ</span>
+    <span class="x big blk slam" style="--d:28.6s">من نجاحي</span>
+    <i class="rule" style="--d:29.4s"></i>
+    <span class="x thanks rise" style="--d:29.9s">شكرًا لكم</span>
+    <div class="sign"><span class="x rise" style="--d:30.8s">أختكم</span><b class="x wipe" style="--d:31.2s">حنان المالكي</b></div>
+  </section>
+
+  <i class="vig"></i><i class="grain"></i>
+  <i class="bar t"></i><i class="bar b"></i>
+</template>
+
+<script>
+{
+const stage=document.getElementById('stage'),tpl=document.getElementById('tpl'),ctl=document.getElementById('ctl'),hint=document.getElementById('hint'),playBtn=document.getElementById('playBtn'),muteBtn=document.getElementById('muteBtn');
+const DURATION=34000;let endT=null,idleT=null,muted=false;
+const audio=new Audio('welcome.mp3');audio.preload='auto';audio.setAttribute('playsinline','');
+function build(){
+  stage.classList.remove('play');stage.innerHTML='';stage.appendChild(tpl.content.cloneNode(true));
+  const cols=['#FFC27F','#FF9A4A','#9A7BFF','#fff'],st=stage.querySelector('#stars');
+  for(let i=0;i<40;i++){const s=document.createElement('i');s.className='star';const a=i/40*Math.PI*2,r=34+(i%5)*10;s.style.cssText=`background:${cols[i%cols.length]};--x:${Math.cos(a)*r}cqmin;--y:${Math.sin(a)*r}cqmin;--d:${24.1+(i%4)*.05}s`;st.appendChild(s)}
+}
+function play(){
+  build();void stage.offsetWidth;stage.classList.add('play');
+  try{audio.pause();audio.currentTime=0;if(!muted)audio.play().catch(()=>{})}catch(e){}
+  ctl.classList.add('hide');hint.classList.add('hide');playBtn.textContent='↻ إعادة';
+  clearTimeout(endT);endT=setTimeout(()=>ctl.classList.remove('hide'),DURATION);
+}
+playBtn.addEventListener('click',play);
+muteBtn.addEventListener('click',()=>{muted=!muted;muteBtn.textContent=muted?'🔇 بدون صوت':'🔊 الصوت';if(muted)audio.pause()});
+document.getElementById('fsBtn').addEventListener('click',()=>{const el=document.documentElement;try{(document.fullscreenElement?document.exitFullscreen():(el.requestFullscreen||el.webkitRequestFullscreen).call(el))?.catch?.(()=>{})}catch(e){}});
+stage.addEventListener('click',()=>{if(!stage.classList.contains('play'))return;ctl.classList.remove('hide');clearTimeout(idleT);idleT=setTimeout(()=>ctl.classList.add('hide'),2500)});
+build();
+if(!(document.fullscreenEnabled||document.webkitFullscreenEnabled))document.getElementById('fsBtn').hidden=true;
+const seek=new URLSearchParams(location.search).get('t');
+if(seek){stage.classList.add('play');ctl.hidden=hint.hidden=true;requestAnimationFrame(()=>document.getAnimations().forEach(a=>{a.pause();a.currentTime=+seek*1000}))}
+else{stage.classList.add('play');stage.querySelectorAll('*').forEach(n=>{n.style.animationDelay='-40s'})}
+}
+</script>
+</body>
+</html>
